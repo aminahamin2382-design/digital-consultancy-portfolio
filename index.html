@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aminah Amin | Digital Consultant & Automation Architect</title>
+    
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Modern Color Palette */
+        :root {
+            --bg-color: #F8F9FA;
+            --text-color: #1E293B;
+            --main-brand: #0F172A;
+            --accent-blue: #2563EB;
+            --accent-light: #EFF6FF;
+            --card-bg: #FFFFFF;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--main-brand);
+            margin-top: 0;
+        }
+
+        a {
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Modern Logo & Navigation */
+        header {
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--main-brand);
+            letter-spacing: -1.5px;
+            margin-bottom: -5px;
+        }
+
+        .logo span { color: var(--accent-blue); }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #64748B;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover { color: var(--accent-blue); }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 80px;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            max-width: 950px;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            color: #475569;
+            margin-bottom: 40px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 16px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: #ffffff;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
+        }
+
+        .cta-button:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px -5px rgba(37, 99, 235, 0.5);
+        }
+
+        .secondary-button {
+            display: inline-block;
+            background-color: #ffffff;
+            color: var(--main-brand);
+            border: 2px solid #e2e8f0;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .secondary-button:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        /* Tech Stack / Skills Section */
+        .skills-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .skill-badge {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            color: var(--main-brand);
+            font-size: 0.9rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+        }
+
+        .skill-badge:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Case Study Cards */
+        .work-section { padding: 40px 0 80px; }
+        .section-title { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .case-card {
+            background: var(--card-bg);
+            padding: 40px 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--accent-blue);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .case-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .case-card h3 { font-size: 1.4rem; margin-bottom: 20px; line-height: 1.3;}
+        
+        .beat-title {
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-top: 24px;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .beat-text { font-size: 0.95rem; margin-top: 0; color: #475569; }
+
+        /* AI Agent Spotlight */
+        .agent-section {
+            padding: 80px 0;
+            background-color: var(--accent-light);
+            border-radius: 40px;
+            margin: 40px 24px 80px;
+            text-align: center;
+        }
+
+        .agent-section h2 { font-size: 2.5rem; margin-bottom: 16px; }
+        .agent-section p { max-width: 600px; margin: 0 auto 30px; color: #475569; font-size: 1.1rem; }
+
+        /* Sleek Footer */
+        footer {
+            background-color: var(--main-brand);
+            color: #f1f5f9;
+            padding: 80px 0 40px;
+            text-align: center;
+            border-radius: 40px 40px 0 0;
+        }
+
+        footer h2 { color: #ffffff; font-size: 2.5rem; }
+        footer p { max-width: 650px; font-size: 1.1rem; opacity: 0.8; margin: 0 auto 40px auto; }
+        
+        .footer-cta {
+            color: var(--main-brand);
+            background: #ffffff;
+            padding: 16px 40px;
+            display: inline-block;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .footer-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255,255,255,0.2);
+        }
+
+        .copyright {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            nav ul { display: none; } /* Simplified mobile header */
+            .button-group { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Professional Brand Header & Nav -->
+    <div class="container animate-fade">
+        <header>
+            <div class="brand-container">
+                <div class="logo">Aminah <span>Amin.</span></div>
+                <span class="logo-subtitle">Digital Consultancy</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#work">Case Studies</a></li>
+                    <li><a href="#skills">Tech Stack</a></li>
+                    <li><a href="#agent">AILabBot</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero animate-fade">
+        <div class="container">
+            <h1>Architecting automated workflows & scalable e-commerce systems.</h1>
+            <p>Bridging the gap between technical software development and real-world business strategy to turn digital storefronts into high-performing assets.</p>
+            <div class="button-group">
+                <a href="#work" class="cta-button">Explore Case Studies</a>
+                <a href="#agent" class="secondary-button">Chat with my AI</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack / Skills -->
+    <div class="container">
+        <section id="skills" class="skills-section animate-fade">
+            <h2 class="section-title">Technical Arsenal</h2>
+            <p style="color: #475569; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Combining traditional computer science paradigms with modern low-code automation tools.</p>
+            <div class="skills-grid">
+                <div class="skill-badge">n8n Node Architecture</div>
+                <div class="skill-badge">C++ (OOP)</div>
+                <div class="skill-badge">Apify & Web Scraping</div>
+                <div class="skill-badge">GoHighLevel (CRM)</div>
+                <div class="skill-badge">Claude & ChatGPT Prompting</div>
+                <div class="skill-badge">Etsy / Shopify / Walmart Strategy</div>
+                <div class="skill-badge">Canva & Kittl Design</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- AI Agent Spotlight -->
+    <section id="agent" class="agent-section animate-fade">
+        <div class="container">
+            <h2>Meet AILabBot</h2>
+            <p>My custom-trained AI assistant powered by Claude-Opus-4.6. It is designed to answer queries regarding e-commerce strategy, n8n workflow automation, and digital product design instantly.</p>
+            <!-- PUT YOUR POE.COM LINK HERE -->
+            <a href="https://poe.com/AILabBot" target="_blank" class="cta-button">Talk to AILabBot on Poe</a>
+        </div>
+    </section>
+
+    <!-- Work / Case Studies -->
+    <div class="container">
+        <section id="work" class="work-section animate-fade">
+            <h2 class="section-title">Featured Case Studies</h2>
+            <div class="grid">
+
+                <div class="case-card">
+                    <h3>Automated SEO & Content Generation Architecture</h3>
+                    <div class="beat-title">The Problem</div>
+                    <p class="beat-text">Manual SEO research and content generation were taking hours every week, leading to inconsistent publishing and wasted time on repetitive tasks.</p>
+                    <div class="beat-title">What I Did</div>
+                    <p class="beat-text">I designed and deployed a complex node architecture using n8n. I connected web scraping nodes to content-generation APIs, creating a hands-off pipeline.</p>
+                    <div class="beat-title">The Outcome</div>
+                    <p class="beat-text">A process that used to take 5 hours of manual work now runs automatically in under 10 minutes.</p>
+                </div>
+
+                <div class="case-card">
+                    <h3>E-Commerce Product Strategy: Digital Assets</h3>
+                    <div class="beat-title">The Problem</div>
+                    <p class="beat-text">Standing out in the digital printables market requires extremely high-quality products; generic designs fail to convert traffic into sales.</p>
+                    <div class="beat-title">What I Did</div>
+                    <p class="beat-text">I designed a bespoke "Cherry Aesthetic" printable birthday card formatted as a high-resolution, print-ready asset and presented it using premium e-commerce staging.</p>
+                    <div class="beat-title">The Outcome</div>
+                    <p class="beat-text">Created a highly scalable digital asset ready for immediate deployment, proving visual product hunting capabilities.</p>
+                </div>
+
+                <div class="case-card">
+                    <h3>Professional Drafting for Property Tribunals</h3>
+                    <div class="beat-title">The Problem</div>
+                    <p class="beat-text">Property tribunal cases are often delayed because of poorly structured documents that fail to meet strict procedural guidelines.</p>
+                    <div class="beat-title">What I Did</div>
+                    <p class="beat-text">I thoroughly reviewed the complex procedural guidelines for local tribunals and drafted clean, highly formatted, and accurate professional documents.</p>
+                    <div class="beat-title">The Outcome</div>
+                    <p class="beat-text">Delivered error-free documentation that met all legal standards on the first pass, completely eliminating back-and-forth revisions.</p>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- About & Contact Section -->
+    <footer id="contact">
+        <div class="container">
+            <h2>Let's Scale Your Operations</h2>
+            <p>I apply complex programming concepts and database automation to solve operational bottlenecks for businesses. Ready to upgrade your digital storefront?</p>
+            <a href="mailto:your.email@example.com" class="footer-cta">Get in Touch</a>
+            <div class="copyright">
+                &copy; 2026 Aminah Amin. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
